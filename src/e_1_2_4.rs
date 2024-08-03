@@ -28,4 +28,18 @@ mod test {
         let str = c.to_string();
         assert_eq!(str, "RGB (128, 255, 90) 0x80FF5A");
     }
+
+    #[test]
+    fn display_eight() {
+        let a = 8;
+        let str = format!("{a:o}");
+        assert_eq!(str, "10");
+    }
+
+    #[test]
+    fn display_binary() {
+        let a = 4;
+        let str = format!("{a:b}");
+        assert_eq!(str, "100");
+    }
 }
