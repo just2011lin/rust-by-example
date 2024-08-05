@@ -26,7 +26,15 @@ mod test {
     #[test]
     fn parse_to_point() {
         let s = "10,2";
-        let p: Point = s.parse().unwrap();
+        let p = s.parse::<Point>().unwrap();
+        assert_eq!(p.0, 10);
+        assert_eq!(p.1, 2);
+    }
+
+    #[test]
+    fn from_str() {
+        let s = "10,2";
+        let p = Point::from_str(s).unwrap();
         assert_eq!(p.0, 10);
         assert_eq!(p.1, 2);
     }
